@@ -13,4 +13,18 @@ public class PrimesServiceTest {
         boolean actual = primesService.isPrime(n);
         assertEquals(expected, actual);
     }
+    @Test
+    void _539828945930573IsNotPrime() {
+        long n = 539828945930573L;
+        boolean expected = false;
+        boolean actual = primesService.isPrime(n);
+        assertEquals(expected, actual);
+    }
+    @Test
+    void _285191IsPrime(){
+        long n = 285191;
+        boolean expected = true;
+        boolean actual = primesService.isPrime(n);
+        assertEquals (expected, actual);
+    }
 }
