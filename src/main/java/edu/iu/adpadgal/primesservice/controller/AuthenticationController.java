@@ -6,6 +6,7 @@ import edu.iu.adpadgal.primesservice.service.TokenService;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 
 @RestController
+@CrossOrigin("https://adityapadgal.github.io/Numbers-App/")
 public class AuthenticationController {
     private final IAuthenticationService authenticationService;
     private final AuthenticationManager authenticationManager;
@@ -25,7 +27,7 @@ public class AuthenticationController {
     }
 
     @PostMapping("/register")
-    public boolean register(@RequestBody Customer customer) {
+    public Customer register(@RequestBody Customer customer) {
         try{
             return authenticationService.register(customer);
         } catch(IOException e) {
