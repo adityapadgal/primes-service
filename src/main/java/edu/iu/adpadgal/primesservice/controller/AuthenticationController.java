@@ -29,6 +29,7 @@ public class AuthenticationController {
     @PostMapping("/register")
     public Customer register(@RequestBody Customer customer) {
         try{
+            System.out.println("Ahd");
             return authenticationService.register(customer);
         } catch(IOException e) {
             throw new RuntimeException(e);
